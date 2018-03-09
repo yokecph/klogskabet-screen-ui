@@ -1,0 +1,34 @@
+@import '../common.scss';
+
+#settings {
+  padding: 1em;
+  color: #fff;
+  font-size: 2em;
+
+  a {
+    color: #fff;
+  }
+}
+
+#status {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  right: 0px;
+  margin-top: -1em;
+  line-height: 2em;
+  text-align: center;
+  color: #fff;
+
+  display: none;
+}
+
+#wrapper:fullscreen {
+  #settings {
+    display: none;
+  }
+
+  #status {
+    display: block;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "klogskabet-ui",
+  "version": "0.0.1",
+  "description": "Web UI for Klogskabet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "YOKE ApS",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.2.1",
+    "query-string": "^5.0.1"
+  }
+}

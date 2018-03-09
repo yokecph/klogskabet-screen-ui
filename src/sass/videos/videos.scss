@@ -1,0 +1,210 @@
+@import '../common.scss';
+
+.thumbnail {
+  @extend .drop-shadow;
+  position: absolute;
+  width: 908px;
+  height: 487px;
+
+  .poster {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    @include textured('/images/blank.gif', cover);
+
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .play-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    @include textured('/images/videos/playbutton.png', auto);
+  }
+
+  h1 {
+    @extend .text-cutoff;
+    position: absolute;
+    left: 30px;
+    bottom: 70px;
+    color: #fff;
+    font-size: 4em;
+    font-weight: normal;
+    margin: 0;
+    border-bottom: 1px solid #fff;
+  }
+
+  h2 {
+    font-family: GTPressuraMono, BitstreamVeraSansMono, monospace;
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    color: #fff;
+    font-size: 2em;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  &:nth-of-type(1) {
+    top: 36px;
+    left: 36px;
+  }
+
+  &:nth-of-type(2) {
+    top: 36px;
+    right: 36px;
+  }
+
+  &:nth-of-type(3) {
+    bottom: 36px;
+    left: 36px;
+  }
+
+  &:nth-of-type(4) {
+    bottom: 36px;
+    right: 36px;
+  }
+}
+
+#videos {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background: #222;
+
+  .video-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+  }
+}
+
+#video-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.5);
+
+  &.single-video {
+    #stop-button {
+      display: none;
+    }
+
+    #info-button {
+      left: 36px;
+    }
+  }
+
+  #play-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    @include textured('/images/videos/playbutton.png', auto);
+  }
+
+  &.transparent {
+    background: transparent;
+
+    * {
+      display: none !important;
+    }
+  }
+
+  #stop-button {
+    position: absolute;
+    top: 36px;
+    left: 36px;
+    width: 100px;
+    height: 100px;
+    @include textured('/images/videos/stopbutton.png', auto);
+  }
+
+  #info-button {
+    position: absolute;
+    top: 36px;
+    left: 150px;
+    width: 100px;
+    height: 100px;
+    @include textured('/images/videos/infobutton.png', auto);
+  }
+
+  #description-container {
+    position: absolute;
+    width: $screen-width * 0.40;
+    height: $screen-height;
+    left: 0px;
+    top: 0px;
+    display: none;
+
+    #top-controls {
+      position: absolute;
+      top: 4%;
+      left: 10%;
+      width: 80%;
+      font-size: 3em;
+
+      span {
+        float: left;
+        margin-right: 1em;
+
+        &:first-of-type {
+          float: right;
+          margin-right: 0;
+        }
+      }
+    }
+
+    #bottom-controls {
+      position: absolute;
+      bottom: 4%;
+      left: 10%;
+      width: 80%;
+      font-size: 1.5em;
+    }
+
+    #description {
+      position: absolute;
+      left: 10%;
+      top: 10%;
+      right: 10%;
+      bottom: 10%;
+      white-space: normal;
+      overflow: hidden;
+
+      h1 {
+        font-size: 4.2em;
+        font-weight: normal;
+      }
+
+      p {
+        margin-left: 1em;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+

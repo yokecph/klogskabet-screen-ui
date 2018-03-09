@@ -1,0 +1,15 @@
+@import './overview.scss';
+@import './interval.scss';
+
+#lang-controls {
+  position: absolute;
+  top: 36px;
+  right: 36px;
+  z-index: 3000;
+
+  .set-locale {
+    color: #fff;
+    margin-left: 0.5em;
+  }
+}
+

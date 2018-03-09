@@ -1,0 +1,147 @@
+@import '../common.scss';
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+#gallery {
+  @extend .text-cutoff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: $screen-width;
+  height: $screen-height;
+  margin: 0;
+  padding: 0;
+  background: #333;
+
+  #canvas {
+    position: absolute;
+
+    div.image-list {
+      position: absolute;
+
+      div.image {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        @include textured('/images/blank.gif', cover);
+      }
+    }
+  }
+
+  #modal {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: $screen-width;
+    height: $screen-height;
+    background: rgba(0, 0, 0, 0.5);
+
+    $closeup-margin: 60px;
+    #frame {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      margin-left: -$screen-width / 4;
+      width: $screen-width / 2;
+      height: $screen-height;
+      background: #000;
+    }
+
+    #closeup {
+      position: absolute;
+      left: $closeup-margin;
+      top: $closeup-margin;
+      width: $screen-width / 2 - ($closeup-margin * 2);
+      height: $screen-height - 2 * $closeup-margin;
+      @include textured('/images/blank.gif', contain);
+    }
+
+    #description-container {
+      position: absolute;
+      width: $screen-width * 0.40;
+      height: $screen-height;
+      right: 0px;
+      top: 0px;
+      display: none;
+
+      #top-controls {
+        position: absolute;
+        top: 4%;
+        left: 10%;
+        width: 80%;
+        font-size: 3em;
+
+        span {
+          @extend .set-locale;
+          float: left;
+          margin-right: 1em;
+
+          &:first-of-type {
+            float: right;
+            margin-right: -0.5em;
+            padding: 0 0.5em;
+          }
+        }
+      }
+
+      #bottom-controls {
+        position: absolute;
+        bottom: 4%;
+        left: 10%;
+        width: 80%;
+        font-size: 1.5em;
+      }
+
+      #description {
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        right: 10%;
+        bottom: 10%;
+        white-space: normal;
+        overflow: hidden;
+
+        h1 {
+          font-size: 4.2em;
+          font-weight: normal;
+        }
+
+        p {
+          margin-left: 1em;
+          font-size: 24px; // absolute value to avoid chrome scaling bug
+        }
+
+        #source-label, #source {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &.expanded {
+      left: 0;
+      width: $screen-width;
+      margin-left: 0;
+
+      #frame {
+        margin-left: 0;
+        left: 5%;
+      }
+
+      #info-button {
+        display: none;
+      }
+
+      #description-container {
+        display: block;
+      }
+    }
+  }
+}
+
+#call-to-action {
+  div {
+    @include textured('/images/gallery/cta-icon.png', auto);
+  }
+}

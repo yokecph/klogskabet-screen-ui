@@ -1,0 +1,182 @@
+@import '../common.scss';
+
+$secondary-color: #191919;
+
+#timeline-interval {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: $screen-width;
+  height: $screen-height;
+
+  ol {
+    position: absolute;
+    top: 120px;
+    left: 200px;
+    right: 200px;
+    list-style: none outside;
+
+    li {
+      float: left;
+      width: 25%;
+      height: 150px;
+      box-sizing: border-box;
+      color: #fff;
+      text-indent: 1em;
+      font-size: 2em;
+      @include textured('/images/timeline/line-down.png', auto);
+      background-position: 0px 0.5em;
+
+      span {
+        display: none;
+      }
+
+      &.selected {
+        margin-top: -60px;
+
+        span {
+          display: block;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  #hide-interval {
+    position: absolute;
+    top: 36px;
+    left: 36px;
+    width: 70px;
+    height: 70px;
+    @include textured('/images/timeline/collapse.png', auto);
+  }
+
+  header {
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    right: 100px;
+
+    h1 {
+      @extend .drop-shadow;
+      @extend .text-cutoff;
+      font-size: 7em;
+      line-height: 1;
+      padding: 0.75em 0.4em 0.1em 0.4em;
+      box-sizing: border-box;
+      height: 220px;
+      margin: 0;
+    }
+
+    div.fold {
+      position: absolute;
+      top: 7.5px; // 30px * sin(30deg) / 2
+      width: 30px;
+      height: 220px;
+      transform: skewY(30deg);
+
+      &.dark {
+        background: $secondary-color;
+      }
+
+      &:nth-of-type(even) {
+        transform: skewY(-30deg);
+      }
+
+      &.inverted {
+        transform: skewY(-30deg);
+
+        &:nth-of-type(even) {
+          transform: skewY(30deg);
+        }
+      }
+
+      $folds: 5;
+      @for $i from 1 through $folds {
+        &:nth-of-type(#{$i}) {
+          left: -$i * 30px;
+          top: -7.5px;
+        }
+
+        &:nth-of-type(#{$i + $folds}) {
+          right: -$i * 30px;
+        }
+      }
+    }
+  }
+
+  #gallery, #description {
+    position: absolute;
+    top: 480px;
+    bottom: 70px;
+    color: #fff;
+  }
+
+  #gallery {
+    left: 150px;
+    right: $screen-width / 2 - 50;
+
+    #images {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      bottom: 100px;
+      right: 0px;
+
+      div {
+        position: absolute;
+        @include textured('/images/blank.gif', cover);
+      }
+
+      #main {
+        width: 70%;
+        height: 100%;
+        background-size: contain;
+      }
+
+      .extra-image {
+        right: 0px;
+        width: 25%;
+        height: 30%;
+      }
+
+      #extra-2 {
+        top: 34%;
+      }
+
+      #extra-3 {
+        top: 69%;
+      }
+    }
+
+    #image-info {
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      width: 70%;
+      font-size: 18px;
+
+      #image-source {
+        color: #777;
+      }
+    }
+  }
+
+  #description {
+    left: $screen-width / 2 + 60;
+    right: 150px;
+    padding: 0em 3em;
+
+    h2 {
+      font-size: 2.2em;
+      margin: 0;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+}

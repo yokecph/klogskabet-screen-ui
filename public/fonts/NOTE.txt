@@ -1,0 +1,17 @@
+This project uses the GT Pressura Mono font from Grilli Type.
+This is a commerically available font, which must be licensed from Grilli Type
+for use on a website: https://www.grillitype.com/typeface/gt-pressura
+
+Therefore, the font is *not* included in this repository, but must be added
+manually once licensed. The font's files *must not* be committed to the
+repository.
+
+And empty folder is included in the repo, where the font files should be
+installed.
+
+For development purposes, the Bitstream Vera Sans Mono (a free and open source
+alternate font) is included and used as a fallback, if GT Pressura is not
+present.
+
+See the license for BitStreamVeraSansMono in the font's folder.
+

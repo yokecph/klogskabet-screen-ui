@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Klogskabet - Quiz</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <link rel="stylesheet" href="css/quiz/quiz.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+    <div id="background-block">
+      <span
+        id="show-result"
+        class="pseudo-link disabled"
+        data-da="Sammenlign svar"
+        data-en="Compare answers"
+      ></span>
+    </div>
+
+    <section id="quiz" class="theme-color-background">
+      <header>
+        <h1></h1>
+        <h2></h2>
+      </header>
+
+      <ol id="ranks"></ol>
+
+      <ul id="options"></ul>
+    </section>
+
+    <div id="result" style="display: none">
+      <h1></h1>
+
+      <ul id="results"></ul>
+
+      <span
+        id="back-to-quiz"
+        class="pseudo-link"
+        data-da="Tilbage til quizzen"
+        data-en="Back to the quiz"
+      ></span>
+    </div>
+
+    <div id="lang-controls">
+      <span class="set-locale selected" data-locale="da">DK</span>
+      <span class="set-locale" data-locale="en">EN</span>
+    </div>
+
+    <div id="call-to-action">
+      <div></div> <!-- style="background-image: url(images/gallery/cta-icon.png)"-->
+      <span data-da="Træk og slip svarene" data-en="Drag and drop the the answers"></span>
+    </div>
+
+    <div id="loading-overlay">
+      <span>Loading...</span>
+      <div id="progress-bar-container">
+        <div id="progress-bar-fill"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/quiz/quiz.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

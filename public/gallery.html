@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Klogskabet - Galleri</title>
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <link rel="stylesheet" href="css/gallery/gallery.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+  <div id="wrapper">
+
+    <section id="gallery">
+      <div id="canvas"></div>
+
+      <div id="modal" class="expanded" style="display: none">
+        <div id="frame">
+          <div id="closeup"></div>
+        </div>
+
+        <div id="description-container" class="theme-color-background">
+          <div id="top-controls">
+            <span class="pseudo-link" id="close-modal">X</span>
+            <span class="set-locale selected" data-locale="da">DK</span>
+            <span class="set-locale" data-locale="en">EN</span>
+          </div>
+
+          <div id="description">
+
+            <header>
+              <h1><!-- image title --></h1>
+            </header>
+
+            <div id="description-body"><!-- description text --></div>
+
+            <p>
+              <span id="source-label" data-da="Kilde:" data-en="Source:"></span>
+              <span id="source"><!-- image source --></span>
+            </p>
+          </div>
+          <!--
+          <div id="bottom-controls">
+            <span class="pseudo-link" id="show-another">Vis mig en mere</span>
+          </div>
+          -->
+        </div>
+      </div>
+    </section>
+
+    <div id="call-to-action">
+      <div></div> <!-- style="background-image: url(images/gallery/cta-icon.png)"-->
+      <span data-da="Rul for a gennemse billeder" data-en="Drag to peruse images"></span>
+    </div>
+
+  </div>
+
+  <div id="loading-overlay">
+    <span>Loading...</span>
+    <div id="progress-bar-container">
+      <div id="progress-bar-fill"></div>
+    </div>
+  </div>
+
+  <script src="js/gallery/gallery.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

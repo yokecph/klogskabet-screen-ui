@@ -1,0 +1,16 @@
+# Ignore includes
+/node_modules
+
+# Ignore build products
+/public/css/*
+!/public/css/.keep
+
+/public/js/*
+!/public/js/.keep
+
+# Ignore licensed files
+/public/fonts/GTPressura/*
+!/public/fonts/GTPressura/.keep
+
+# Ignore system files
+.DS_Store
