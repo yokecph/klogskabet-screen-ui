@@ -9,15 +9,15 @@ $animation-duration: 1s;
 
 @font-face {
  font-family: GTPressuraMono;
- src: url("../../fonts/GTPressura/GT-Pressura-Mono.woff2") format("woff2"),
- src: url("../../fonts/GTPressura/GT-Pressura-Mono.woff") format("woff"),
-      url("../../fonts/GTPressura/GT-Pressura-Mono.eot") format("eot"),
-      url("../../fonts/GTPressura/GT-Pressura-Mono.ttf") format("ttf");
+ src: url("../../fonts/GTPressura/GT-Pressura-Mono-Regular.woff2") format("woff2");
+ src: url("../../fonts/GTPressura/GT-Pressura-Mono-Regular.woff") format("woff"),
+      url("../../fonts/GTPressura/GT-Pressura-Mono-Regular.eot") format("eot"),
+      url("../../fonts/GTPressura/GT-Pressura-Mono-Regular.ttf") format("ttf");
 }
 
 @font-face {
  font-family: BitstreamVeraSansMono;
- src: url("../../fonts/BitstreamVeraSansMono/VeraMono.woff2") format("woff2"),
+ src: url("../../fonts/BitstreamVeraSansMono/VeraMono.woff2") format("woff2");
  src: url("../../fonts/BitstreamVeraSansMono/VeraMono.woff") format("woff"),
       url("../../fonts/BitstreamVeraSansMono/VeraMono.ttf") format("ttf");
 }
@@ -43,6 +43,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: 'Crimson Text', serif;
+  font-weight: bold;
 }
 
 a {
