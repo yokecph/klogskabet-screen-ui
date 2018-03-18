@@ -101,6 +101,13 @@ class VideoPlayer {
         controls: false
       });
 
+      if (this.posterUrl) {
+        $(this.player).attr({
+          poster: this.posterUrl,
+          preload: 'metadata'
+        });
+      }
+
       this.player.oncanplay = function () {
         const minutes = self.duration / 60 | 0;
         const seconds = self.duration % 60;
@@ -129,11 +136,15 @@ class VideoPlayer {
         self.onseeking();
       };
 
+      this.player.onseeked = function () {
+        self.onseeked();
+      };
+
       this.player.onclick = function () {
         self.pause();
       };
 
-      this.player.src = info.video_url;
+      this.player.src = info.mp4_url;
       this.containerElement.append(this.player);
     }
   }
@@ -146,6 +157,7 @@ class VideoPlayer {
     if (this.youtube) {
       return `https://img.youtube.com/vi/${this.info.youtube_id}/sddefault.jpg`;
     } else {
+      return this.info.mp4_poster_url || '';
       // try {
       //   console.log('Drawing thumbnail');
       //   const canvas = document.createElement('canvas');
@@ -195,11 +207,20 @@ class VideoPlayer {
     }
   }
 
+  rewind() {
+    if (this.youtube) {
+      this.player.seekTo(0);
+    } else {
+      this.player.currentTime = 0;
+    }
+  }
+
   // event handler stubs
   onended () {}
   onplaying() {}
   onpause () {}
   onseeking () {}
+  onseeked () {}
 
   // get whether the player's paused
   get paused() {
