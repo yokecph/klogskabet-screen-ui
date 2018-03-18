@@ -105,6 +105,15 @@
   right: 0px;
   background: rgba(0, 0, 0, 0.5);
 
+  #poster-overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: $screen-width;
+    height: $screen-height;
+    @include textured('/images/blank.gif', cover);
+  }
+
   &.single-video {
     #stop-button {
       display: none;
@@ -124,6 +133,12 @@
     margin-left: -50px;
     margin-top: -50px;
     @include textured('/images/videos/playbutton.png', auto);
+  }
+
+  &.youtube {
+    #poster-overlay {
+      display: none !important;
+    }
   }
 
   &.transparent {
