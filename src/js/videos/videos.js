@@ -34,14 +34,18 @@ $(window).on('load', function () {
           };
 
           player.onplaying = function () {
-            $('#video-overlay').addClass('transparent');
-            $('#play-button').show();
+            const overlay = $('#video-overlay');
+            overlay.addClass('transparent');
+            overlay.find('#play-button').show();
+            overlay.find('#poster-overlay').hide();
             clearIdleTimer();
           };
 
           player.onended = function () {
-            $('#video-overlay').removeClass('transparent');
-            $('#play-button').show();
+            const overlay = $('#video-overlay');
+            overlay.removeClass('transparent');
+            overlay.find('#play-button').show();
+            overlay.find('#poster-overlay').show();
             player.stop();
             startIdleTimer();
           };
@@ -49,6 +53,10 @@ $(window).on('load', function () {
           player.onseeking = function () {
             $('#play-button').hide();
             clearIdleTimer();
+          };
+
+          player.onseeked = function () {
+            $('#play-button').show();
           };
 
           loader.tick();
@@ -72,6 +80,16 @@ $(window).on('load', function () {
 function showVideo(player) {
   const overlay = $('#video-overlay');
   const description = overlay.find('#description');
+
+  // set the player type
+  if (player.youtube) {
+    overlay.addClass('youtube');
+  } else {
+    overlay.removeClass('youtube');
+    overlay.find('#poster-overlay').css({
+      'background-image': `url(${player.posterUrl || '/images/blank.gif'})`
+    });
+  }
 
   // populate description etc.
   description.find('h1')
@@ -128,10 +146,13 @@ function goIdle() {
     }
 
     player.stop();
+    overlay.find('#poster-overlay').show();
   }
 
   if (!singleVideo) {
     hideVideo();
+  } else {
+    player.rewind();
   }
 
   $('#description-container').hide();
