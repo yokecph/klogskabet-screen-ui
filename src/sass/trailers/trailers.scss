@@ -1,0 +1,48 @@
+@import '../common.scss';
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    cursor: none !important;
+}
+
+html, h1, h3, p {
+    margin: 0;
+}
+
+body {
+    overflow: hidden;
+}
+
+#trailers-for-printing {
+    display: none;
+}
+
+iframe, #trailers-container {
+    width: 1920px;
+    height: 1080px;
+}
+
+#trailers-container {
+    overflow: hidden;
+    background-color: #303234;
+}
+
+.trailer-player, .trailer-introduction {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.trailer-introduction {
+    margin-top: 350px;
+    text-align: center;
+    color: #efefef;
+
+    h1 {
+        font-size: 5em;
+    }
+
+    p {
+        font-size: 3em;
+    }
+}

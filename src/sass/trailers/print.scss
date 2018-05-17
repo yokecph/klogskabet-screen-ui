@@ -1,0 +1,25 @@
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 600px;
+    }
+
+    #trailers-container, .trailer-player, .trailer-introduction {
+        display: none;
+    }
+
+    #trailers-for-printing {
+        display: block;
+        margin-left: -5px;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    .print-heading, .trailer-for-print {
+        margin-bottom: 0;
+    }
+}
